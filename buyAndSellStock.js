@@ -18,6 +18,7 @@ Output: 0
 Explanation: In this case, no transactions are done and the max profit = 0.
 */
 
+
 var maxProfit = function (prices) {
   var result = [];
   for (i = 0; i < prices.length; i++) {
