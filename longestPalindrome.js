@@ -46,6 +46,7 @@ var longestPalindrome = function (string) {
 
  };
 
+
 //I : string.
 //O : a longest palindrome.
 //C :
