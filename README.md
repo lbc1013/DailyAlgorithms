@@ -1,2 +1,4 @@
 # DailyAlgorithms
-Algorithms practice (JS)
+- Algorithms practice (JS)
+
+
