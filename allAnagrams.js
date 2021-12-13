@@ -53,13 +53,14 @@
     return false
   };
 
+  var finalResult = [];
   result.forEach((element) => {
-    if (isDuplicate(element)) {
-      result.splice(result.indexOf(element) , 1);
+    if (!isDuplicate(element)) {
+      finalResult.push(element);
     }
   })
 
-  return result;
+  return finalResult;
 };
 
 
@@ -75,5 +76,3 @@ E : if string is empty, return empty string.
 
 
 */
-
-
