@@ -26,19 +26,33 @@ Only one valid answer exists.
 */
 
 var twoSum = function(nums, target) {
-  var result = [];
-      for (var element of nums) {
-          for (var i = 0; i < nums.length; i++) {
-              if (element+nums[i] === target && nums.indexOf(element) !== i) {
-                  result.push(nums.indexOf(element), i);
-                  nums.splice(nums.indexOf(element),1);
-              }
-          }
-      }
-  return result;
+//   var result = [];
+//       for (var element of nums) {
+//           for (var i = 0; i < nums.length; i++) {
+//               if (element+nums[i] === target && nums.indexOf(element) !== i) {
+//                   result.push(nums.indexOf(element), i);
+//                   nums.splice(nums.indexOf(element),1);
+//               }
+//           }
+//       }
+//   return result;
+// ---- time complexity O(N^2) ----
+
+    const map = {};
+    const result = [];
+    let diff = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        diff = target - nums[i];
+        if (map.hasOwnProperty(diff)) {
+            result.push(map[diff]);
+            result.push(i);
+        } else {
+            map[nums[i]] = i;
+        }
+    }
+    return result;
 };
 
-
-// iterate nums twice
-// if the sume of the nums are same as the target
-// return the both of index
+// input : nums, target
+// output : array with first element's index and the last's index.
