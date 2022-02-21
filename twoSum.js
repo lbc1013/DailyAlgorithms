@@ -40,18 +40,18 @@ var twoSum = function(nums, target) {
 
     const map = {};
     const result = [];
-    let diff = 0;
 
     for (let i = 0; i < nums.length; i++) {
-        diff = target - nums[i];
+        let diff = target - nums[i];
         if (map.hasOwnProperty(diff)) {
             result.push(map[diff]);
             result.push(i);
+
+            console.log (result);
         } else {
             map[nums[i]] = i;
         }
     }
-    return result;
 };
 
 // input : nums, target
